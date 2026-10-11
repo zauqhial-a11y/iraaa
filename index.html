@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff7f8"><meta name="description" content="Ruang kecil Zauqhi & Aisyarah untuk menyimpan mood, surat, kenangan, dan rencana.">
+  <title>Aisyarah ♡ Our Little Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+
+  <div id="welcome" class="modal" aria-modal="true" role="dialog">
+    <div class="modal-card welcome-card">
+      <div class="logo-heart">♡</div><span class="tiny-label">A PRIVATE LITTLE SPACE</span>
+      <h1>Untuk Zauqhi &<br>Aisyarah.</h1>
+      <p>Tempat kecil untuk menyimpan cerita, perasaan, kenangan, dan rencana yang ingin kalian ingat.</p>
+      <div class="who"><button data-user="Zauqhi"><span>♡</span><b>Zauqhi</b><small>masuk sebagai aku</small></button><button data-user="Aisyarah"><span>♡</span><b>Aisyarah</b><small>masuk sebagai aku</small></button></div>
+      <small class="privacy">Pilih namamu untuk masuk. Data isi aplikasi dibagikan di ruang ini.</small>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">♡</div><div><strong>Aisyarah</strong><span>our little space</span></div></div>
+      <nav class="nav-list" aria-label="Navigasi">
+        <button class="nav active" data-page="home"><span>⌂</span>Beranda</button>
+        <button class="nav" data-page="mood"><span>☻</span>Mood kita</button>
+        <button class="nav" data-page="notes"><span>✉</span>Surat kecil</button>
+        <button class="nav" data-page="memories"><span>♡</span>Kenangan</button>
+        <button class="nav" data-page="plans"><span>☆</span>Rencana</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="user-chip"><div class="avatar" id="avatar">Z</div><div><b id="roleName">Zauqhi</b><span>di ruang kita</span></div></div><button id="switchUser" class="switch">Ganti pengguna</button></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><span id="eyebrow" class="eyebrow">Ruang kita</span><h2 id="pageTitle">Beranda</h2></div><div class="online"><i></i><span>ruang bersama</span></div></header>
+
+      <section id="home" class="page active">
+        <div class="hero cardish"><div class="hero-copy"><span class="pill">Zauqhi <b>♡</b> Aisyarah</span><h1>Hal-hal kecil yang<br><em>ingin kita simpan.</em></h1><p>Bukan sekadar aplikasi. Ini ruang kecil untuk dua orang yang ingin mengingat lebih banyak hal bersama.</p><button class="hero-btn" data-page-jump="notes">Tulis sesuatu <span>→</span></button></div><div class="hero-art"><div class="heart-ring"><div>♡</div></div><span class="spark s1">✦</span><span class="spark s2">·</span><span class="spark s3">✦</span></div></div>
+        <div class="stats"><div class="stat"><span>MOOD</span><b id="statMood">0</b><small>tersimpan</small></div><div class="stat"><span>SURAT</span><b id="statNotes">0</b><small>surat kecil</small></div><div class="stat"><span>KENANGAN</span><b id="statMemories">0</b><small>momen</small></div><div class="stat"><span>RENCANA</span><b id="statPlans">0</b><small>ingin diwujudkan</small></div></div>
+        <div class="home-grid"><div class="card"><div class="card-title"><span>Mood terbaru</span><button data-page-jump="mood">lihat semua</button></div><div id="latestMood" class="feature-empty">Belum ada mood yang dibagikan.</div></div><div class="card"><div class="card-title"><span>Surat terakhir</span><button data-page-jump="notes">lihat semua</button></div><div id="latestNote" class="feature-empty">Belum ada surat kecil.</div></div></div>
+        <div class="quote card"><span>♡</span><p>“Semoga sejauh apa pun nanti langkah kita, tetap ada jalan untuk pulang ke tempat yang sama.”</p><small>— untuk kita</small></div>
+      </section>
+
+      <section id="mood" class="page"><div class="section-head"><div><span class="section-kicker">TODAY</span><h3>Mood kita</h3><p>Bagikan keadaanmu hari ini. Biar yang satu tahu kabar yang satu.</p></div></div><div class="card"><div class="mood-picker" id="moodPicker"><button data-mood="Senang"><span>☀️</span><b>Senang</b><small>lagi happy</small></button><button data-mood="Tenang"><span>🌿</span><b>Tenang</b><small>lagi adem</small></button><button data-mood="Capek"><span>🌙</span><b>Capek</b><small>butuh istirahat</small></button><button data-mood="Sedih"><span>☁️</span><b>Sedih</b><small>lagi kurang baik</small></button><button data-mood="Semangat"><span>✨</span><b>Semangat</b><small>lagi on fire</small></button></div></div><div class="card list-card"><div class="card-title"><span>Riwayat mood</span><small>terbaru di atas</small></div><div id="moodList" class="list"></div></div></section>
+
+      <section id="notes" class="page"><div class="section-head"><div><span class="section-kicker">WORDS</span><h3>Surat kecil</h3><p>Tulis sesuatu yang ingin kamu sampaikan, tanpa harus menunggu momen tertentu.</p></div></div><div class="card composer"><label for="noteText">Untuk orang yang kamu sayang</label><textarea id="noteText" maxlength="800" placeholder="Tulis surat kecil di sini..."></textarea><div class="composer-foot"><span id="noteCount">0 / 800</span><button id="sendNote" class="primary">Kirim surat <span>♡</span></button></div></div><div id="noteList" class="note-list"></div></section>
+
+      <section id="memories" class="page"><div class="section-head"><div><span class="section-kicker">OUR STORY</span><h3>Kenangan</h3><p>Simpan momen yang suatu hari nanti ingin kalian baca lagi.</p></div></div><div class="card composer"><label for="memoryTitle">Judul kenangan</label><input id="memoryTitle" maxlength="80" placeholder="Contoh: Hari pertama kita pergi bareng"><label for="memoryText">Ceritanya</label><textarea id="memoryText" maxlength="500" placeholder="Ceritakan sedikit tentang momen ini..."></textarea><div class="composer-foot"><span></span><button id="addMemory" class="primary">Simpan kenangan <span>♡</span></button></div></div><div id="memoryList" class="memory-grid"></div></section>
+
+      <section id="plans" class="page"><div class="section-head"><div><span class="section-kicker">SOMEDAY</span><h3>Rencana kita</h3><p>Hal-hal kecil yang ingin diwujudkan bersama.</p></div></div><div class="card composer"><label for="planText">Mau melakukan apa bersama?</label><div class="plan-input"><input id="planText" maxlength="160" placeholder="Contoh: Balik lagi ke Uluwatu"><button id="addPlan" class="primary">Tambah</button></div></div><div id="planList" class="plan-list"></div></section>
+    </main>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
